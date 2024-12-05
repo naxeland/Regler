@@ -22,12 +22,12 @@ w, mag, phase = signal.bode(system)
 plt.axvline(x=1, color='r', linestyle='--')  # Add vertical line at the first asymptote
 
 plt.xlim(0.1, 10)
-plt.semilogx(w, mag)
+plt.semilogx(w, 10**(mag/20))
 plt.title('Bode plot')
 plt.xlabel('Frequency [rad/s]')
 plt.ylabel('Magnitude [dB]')
-#plt.yscale('log')
-plt.ylim(-40, 15)
+plt.yscale('log')
+plt.ylim(0.01, 15)
 plt.grid(True, which='both')
 plt.figure()
 
