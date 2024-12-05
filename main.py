@@ -50,7 +50,6 @@ plt.plot(func_final(w))
 plt.plot(2.038324649571132, -135, 'ro')
 plt.plot(2.816950008351725, 0, 'bo')
 plt.grid(True, which='both',)
-plt.figure()
 
 
 f_interp = interp1d(phase, w)
