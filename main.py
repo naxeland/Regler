@@ -8,6 +8,44 @@ from sympy import symbols, solve, Eq
 # Define the system (numerator and denominator of the transfer function)
 num = [0.5, 0.25]
 den = [1/32, 1/2, 1, 1, 0]
+
+# Create a transfer function system
+system = signal.TransferFunction(num, den)
+
+# Generate the Bode plot
+w, mag, phase = signal.bode(system)
+
+# Plot magnitude
+plt.axvline(x=1, color='r', linestyle='--')  # Add vertical line at the first asymptote
+plt.xlim(0.1, 10)
+plt.semilogx(w, 10**(mag/20))
+plt.title('Bode plot')
+plt.xlabel('Frequency [rad/s]')
+plt.ylabel('Magnitude [dB]')
+plt.yscale('log')
+plt.ylim(0.008, 14)
+plt.grid(True, which='both')
+plt.figure()
+
+# Plot phase
+plt.semilogx(w, phase)
+plt.xlabel('Frequency [rad/s]')
+plt.ylabel('Phase [degrees]')
+plt.xlim(0.08, 12)
+plt.ylim(-210, 170)
+plt.plot(2.038324649571132, -135, 'ro')
+plt.plot(2.816950008351725, -135, 'bo')
+plt.grid(True, which='both',)
+
+plt.show()
+
+
+# Target value in radians (-135 degrees)
+target_value_final = -3*np.pi / 4
+# Target value in radians (-135 degrees)
+target_value_final_pi =-np.pi
+
+# Define the function based on the given equation
 # Target value in radians (-135 degrees)
 target_value_final = -3*np.pi / 4
 
@@ -23,65 +61,11 @@ def func_Kp(x):
     y = 1/func_G(x)
     return y
 
-# Create a transfer function system
-system = signal.TransferFunction(num, den)
-
-# Generate the Bode plot
-w, mag, phase = signal.bode(system)
-# Plot magnitude
-
-plt.axvline(x=1, color='r', linestyle='--')  # Add vertical line at the first asymptote
-
-plt.xlim(0.1, 10)
-plt.semilogx(w, 10**(mag/20))
-plt.title('Bode plot')
-plt.xlabel('Frequency [rad/s]')
-plt.ylabel('Magnitude [dB]')
-plt.yscale('log')
-plt.ylim(0.008, 14)
-plt.grid(True, which='both')
-plt.figure()
-
-# Plot phase
-
-plt.semilogx(w, phase)
-plt.xlabel('Frequency [rad/s]')
-plt.ylabel('Phase [degrees]')
-plt.xlim(0.08, 12)
-plt.ylim(-210, 170)
-plt.plot(func_final(w))
-plt.plot(2.038324649571132, -135, 'ro')
-plt.plot(2.816950008351725, 0, 'bo')
-plt.grid(True, which='both',)
-
-
-f_interp = interp1d(phase, w)
-
-# Desired y-value
-desired_y = -135
-
-# Get the corresponding x-value(s)
-x_val = f_interp(desired_y)
-
-print(f"x-value for y={desired_y}: {x_val}")
-
-plt.show()
-
-
-# Target value in radians (-135 degrees)
-target_value_final = -3*np.pi / 4
-# Target value in radians (-135 degrees)
-target_value_final_pi =-np.pi
-
-# Define the function based on the given equation
 def func_wc(x):
     return np.arctan(2*x) - np.pi/2 - np.arctan(x/2) - 2*np.arctan(x/4) - target_value_final
 
 def func_wpi(x):
     return np.arctan(2*x) - np.pi/2 - np.arctan(x/2) - 2*np.arctan(x/4) - target_value_final_pi
-
-def func_squares(x):
-    20*np.log(x)
 
 # Solve using Brent's method within a reasonable bracket
 solution_final = root_scalar(func_wc, bracket=[-10, 10], method='brentq')
