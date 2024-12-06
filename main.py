@@ -2,8 +2,6 @@ from scipy.optimize import root_scalar
 from scipy import signal
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.interpolate import interp1d
-from sympy import symbols, solve, Eq
 
 # Define the system (numerator and denominator of the transfer function)
 num = [0.5, 0.25]
