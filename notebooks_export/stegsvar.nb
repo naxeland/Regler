@@ -1,0 +1,434 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     17666,        426]
+NotebookOptionsPosition[     16403,        394]
+NotebookOutlinePosition[     16863,        411]
+CellTagsIndexPosition[     16820,        408]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Stegsvar 1:a ordningens system", "Subsubsection",
+ CellChangeTimes->{{3.940223584170952*^9, 
+  3.9402235954652*^9}},ExpressionUUID->"2d1de877-abe6-4b19-9ebe-f1b08a879c91"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Evaluate", "[", 
+      RowBox[{"OutputResponse", "[", 
+       RowBox[{
+        RowBox[{"TransferFunctionModel", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"K", "/", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"T", " ", "s"}], "+", "1"}], ")"}]}], "}"}], "}"}], 
+          ",", "s"}], "]"}], ",", 
+        RowBox[{"UnitStep", "[", "t", "]"}], ",", "t"}], "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "10"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "2"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"T", ",", "0.1", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"K", ",", "0.1", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.940223427279352*^9, 3.940223563907048*^9}},
+ CellLabel->"In[54]:=",ExpressionUUID->"f662d470-8bc0-4520-b0c7-52becb5bead3"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{K$$ = 1.36, $CellContext`T$$ = 3.48, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`T$$], 0.1, 10, ControlType -> Manipulator}, {
+      Hold[K$$], 0.1, 10, ControlType -> Manipulator}}, Typeset`size$$ = {
+    360., {111.50862548782042`, 117.24055908157042`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {K$$ = 0.1, $CellContext`T$$ = 0.1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> Plot[
+        Evaluate[
+         OutputResponse[
+          
+          TransferFunctionModel[{{
+            K$$/($CellContext`T$$ $CellContext`s + 1)}}, $CellContext`s], 
+          UnitStep[$CellContext`t], $CellContext`t]], {$CellContext`t, 0, 10},
+         PlotRange -> {{0, 10}, {0, 2}}], 
+      "Specifications" :> {{$CellContext`T$$, 0.1, 10}, {K$$, 0.1, 10}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{403.1, {192.41905090285948`, 198.15098449660948`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.940223499048066*^9, 3.9402235310329103`*^9, 3.9402235653323593`*^9, {
+   3.940231587329034*^9, 3.940231592554059*^9}},
+ CellLabel->"Out[54]=",ExpressionUUID->"59265d77-499b-4c12-a67d-e2d7515028b5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "=", 
+     RowBox[{"TransferFunctionModel", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"K", "/", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"T", " ", "s"}], "+", "1"}], ")"}]}], "}"}], "}"}], ",", 
+       "s"}], "]"}]}], ";", 
+    RowBox[{"{", 
+     RowBox[{"g", ",", 
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"OutputResponse", "[", 
+          RowBox[{"g", ",", 
+           RowBox[{"UnitStep", "[", "t", "]"}], ",", "t"}], "]"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "10"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "2"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Transpose", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Re", "[", "#", "]"}], ",", 
+             RowBox[{"Im", "[", "#", "]"}]}], "}"}], "]"}], "&"}], "[", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"TransferFunctionPoles", "[", "g", "]"}], "]"}], "]"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "5"}], ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "}"}]}], ",", 
+        RowBox[{"PlotMarkers", "->", "Automatic"}]}], "]"}]}], "}"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"T", ",", "0.2", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"K", ",", "0.1", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.940223427279352*^9, 3.940223563907048*^9}, {
+  3.94022363822762*^9, 3.940223700961761*^9}, {3.940228634399474*^9, 
+  3.940228662829423*^9}, {3.940228989843202*^9, 3.940229155825101*^9}, {
+  3.940229197840866*^9, 3.9402291987214403`*^9}, {3.940229244679734*^9, 
+  3.9402292690345716`*^9}, {3.940229331637257*^9, 3.9402293341997957`*^9}, {
+  3.940229371472953*^9, 3.94022937238619*^9}, {3.940229472961606*^9, 
+  3.940229473534853*^9}, {3.940229556256296*^9, 3.9402295574675627`*^9}, {
+  3.9402303500825167`*^9, 3.94023040888571*^9}, {3.940230544317128*^9, 
+  3.9402305529237967`*^9}, {3.940230754946151*^9, 3.940231029411252*^9}, {
+  3.94023106678423*^9, 3.940231113113181*^9}, {3.94023114890765*^9, 
+  3.9402311504804983`*^9}, {3.940231387039607*^9, 3.940231393202717*^9}, {
+  3.940231458156658*^9, 3.9402314768665237`*^9}, {3.940231516704756*^9, 
+  3.940231517144691*^9}},
+ CellLabel->"In[53]:=",ExpressionUUID->"a777d1d4-5440-417c-b776-71a098fe01b7"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{K$$ = 1.445, $CellContext`T$$ = 2.08, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`T$$], 0.2, 10, ControlType -> Manipulator}, {
+      Hold[K$$], 0.1, 3, ControlType -> Manipulator}}, Typeset`size$$ = {
+    511.85054765625, {55.885566500329894`, 61.617500094079894`}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {K$$ = 0.1, $CellContext`T$$ = 0.2}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, 
+      "Body" :> ($CellContext`g = 
+        TransferFunctionModel[{{
+           K$$/($CellContext`T$$ $CellContext`s + 
+            1)}}, $CellContext`s]; {$CellContext`g, 
+         Plot[
+          Evaluate[
+           OutputResponse[$CellContext`g, 
+            UnitStep[$CellContext`t], $CellContext`t]], {$CellContext`t, 0, 
+           10}, PlotRange -> {{0, 10}, {0, 2}}], 
+         ListPlot[
+          (Transpose[{
+            Re[#], 
+            Im[#]}]& )[
+           Flatten[
+            TransferFunctionPoles[$CellContext`g]]], 
+          PlotRange -> {{-5, 1}, {-5, 5}}, PlotMarkers -> Automatic]}), 
+      "Specifications" :> {{$CellContext`T$$, 0.2, 10}, {K$$, 0.1, 3}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{
+      554.9505476562499, {112.35599191536896`, 118.08792550911896`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.940231479153677*^9, 3.940231520784894*^9},
+ CellLabel->"Out[53]=",ExpressionUUID->"7846516c-bd41-4bf2-8229-3f2957573412"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Stegsvar 2:a ordningens system", "Subsubsection",
+ CellChangeTimes->{{3.940223584170952*^9, 3.9402235954652*^9}, {
+  3.940223629593483*^9, 
+  3.940223630105172*^9}},ExpressionUUID->"f1a16a04-2b5c-480a-90b4-\
+a0005aa048a3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "=", 
+     RowBox[{"TransferFunctionModel", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"K", " ", 
+          RowBox[{
+           RowBox[{"w", "^", "2"}], "/", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"s", "^", "2"}], "+", 
+             RowBox[{"2", " ", "xi", " ", "w", " ", "s"}], "+", 
+             RowBox[{"w", "^", "2"}]}], ")"}]}]}], "}"}], "}"}], ",", "s"}], 
+      "]"}]}], ";", 
+    RowBox[{"{", 
+     RowBox[{"g", ",", 
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{"OutputResponse", "[", 
+          RowBox[{"g", ",", 
+           RowBox[{"UnitStep", "[", "t", "]"}], ",", "t"}], "]"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "10"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "2"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Transpose", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Re", "[", "#", "]"}], ",", 
+             RowBox[{"Im", "[", "#", "]"}]}], "}"}], "]"}], "&"}], "[", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"TransferFunctionPoles", "[", "g", "]"}], "]"}], "]"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "5"}], ",", "1"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "}"}]}], ",", 
+        RowBox[{"PlotMarkers", "->", "Automatic"}]}], "]"}]}], "}"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"xi", ",", "0", ",", "1.2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"w", ",", "0.1", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"K", ",", "0.1", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.940223427279352*^9, 3.940223563907048*^9}, {
+  3.94022363822762*^9, 3.940223700961761*^9}, {3.940228634399474*^9, 
+  3.940228662829423*^9}, {3.940228989843202*^9, 3.940229155825101*^9}, {
+  3.940229197840866*^9, 3.9402291987214403`*^9}, {3.940229244679734*^9, 
+  3.9402292690345716`*^9}, {3.940229331637257*^9, 3.9402293341997957`*^9}, {
+  3.940229371472953*^9, 3.94022937238619*^9}, {3.940229472961606*^9, 
+  3.940229473534853*^9}, {3.940229556256296*^9, 3.9402295574675627`*^9}, {
+  3.9402303500825167`*^9, 3.94023040888571*^9}, {3.940230544317128*^9, 
+  3.9402305529237967`*^9}, {3.940230754946151*^9, 3.940231029411252*^9}, {
+  3.94023106678423*^9, 3.940231113113181*^9}, {3.94023114890765*^9, 
+  3.9402311504804983`*^9}, {3.940231387039607*^9, 3.940231393202717*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"42cedee5-52b2-46e3-94e0-a617932128f7"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{K$$ = 0.625, $CellContext`w$$ = 1.32, $CellContext`xi$$ =
+     0.47000000000000003`, Typeset`show$$ = True, Typeset`bookmarkList$$ = {},
+     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`xi$$], 0, 1.2, ControlType -> Manipulator}, {
+      Hold[$CellContext`w$$], 0.1, 10, ControlType -> Manipulator}, {
+      Hold[K$$], 0.1, 3, ControlType -> Manipulator}}, Typeset`size$$ = {
+    597.3718171875, {55.885566500329894`, 61.617500094079894`}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {
+       K$$ = 0.1, $CellContext`w$$ = 0.1, $CellContext`xi$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, 
+      "Body" :> ($CellContext`g = 
+        TransferFunctionModel[{{
+           K$$ ($CellContext`w$$^2/($CellContext`s^2 + 
+             2 $CellContext`xi$$ $CellContext`w$$ $CellContext`s + \
+$CellContext`w$$^2))}}, $CellContext`s]; {$CellContext`g, 
+         Plot[
+          Evaluate[
+           OutputResponse[$CellContext`g, 
+            UnitStep[$CellContext`t], $CellContext`t]], {$CellContext`t, 0, 
+           10}, PlotRange -> {{0, 10}, {0, 2}}], 
+         ListPlot[
+          (Transpose[{
+            Re[#], 
+            Im[#]}]& )[
+           Flatten[
+            TransferFunctionPoles[$CellContext`g]]], 
+          PlotRange -> {{-5, 1}, {-5, 5}}, PlotMarkers -> Automatic]}), 
+      "Specifications" :> {{$CellContext`xi$$, 0, 1.2}, {$CellContext`w$$, 
+         0.1, 10}, {K$$, 0.1, 3}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{
+      640.4718171874999, {125.65599191536896`, 131.38792550911896`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.940223499048066*^9, 3.9402235310329103`*^9, 3.9402235653323593`*^9, 
+   3.940223702192299*^9, {3.940228625994248*^9, 3.9402286650517073`*^9}, 
+   3.940229063344192*^9, 3.940229101565405*^9, {3.940229141329445*^9, 
+   3.940229157526679*^9}, 3.940229200403975*^9, {3.940229259384943*^9, 
+   3.940229297310821*^9}, 3.94022933932668*^9, 3.9402293731906776`*^9, 
+   3.940229413685137*^9, {3.94022947539826*^9, 3.94022949585156*^9}, 
+   3.9402295588761587`*^9, 3.940229647605777*^9, 3.940230416144596*^9, 
+   3.9402305547963963`*^9, 3.9402308171474257`*^9, {3.9402309087467527`*^9, 
+   3.940230964072811*^9}, {3.940230997836142*^9, 3.940231030167898*^9}, {
+   3.940231094026424*^9, 3.940231113959713*^9}, 3.940231163513102*^9, 
+   3.940231395725974*^9},
+ CellLabel->"Out[51]=",ExpressionUUID->"d709e47d-2231-4be8-8bce-c663dedfdae0"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 758},
+WindowMargins->{{159, Automatic}, {Automatic, -947}},
+TaggingRules-><|"SlideshowSettings" -> <|"Toolbar" -> True|>|>,
+FrontEndVersion->"14.1 for Mac OS X ARM (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"13d0aeef-3020-4ee5-aaba-0abe8faad311"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 177, 2, 43, "Subsubsection",ExpressionUUID->"2d1de877-abe6-4b19-9ebe-f1b08a879c91"],
+Cell[CellGroupData[{
+Cell[778, 28, 1163, 32, 70, "Input",ExpressionUUID->"f662d470-8bc0-4520-b0c7-52becb5bead3"],
+Cell[1944, 62, 2237, 44, 407, "Output",ExpressionUUID->"59265d77-499b-4c12-a67d-e2d7515028b5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4218, 111, 2876, 69, 131, "Input",ExpressionUUID->"a777d1d4-5440-417c-b776-71a098fe01b7"],
+Cell[7097, 182, 2496, 52, 247, "Output",ExpressionUUID->"7846516c-bd41-4bf2-8229-3f2957573412"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9642, 240, 228, 4, 43, "Subsubsection",ExpressionUUID->"f1a16a04-2b5c-480a-90b4-a0005aa048a3"],
+Cell[CellGroupData[{
+Cell[9895, 248, 3012, 73, 90, "Input",ExpressionUUID->"42cedee5-52b2-46e3-94e0-a617932128f7"],
+Cell[12910, 323, 3465, 67, 274, "Output",ExpressionUUID->"d709e47d-2231-4be8-8bce-c663dedfdae0"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
