@@ -69,3 +69,36 @@ print('Flag = ', Flag)
 tidssvar(F)
 Lbode(F)
 Tbode(F)
+
+wc = 70 # önskad skärfrekvens
+mag, phase, omega = ct.frequency_response(F[1]*G, wc)
+phi = np.pi/3-(phase+np.pi)  # beräkna nödvändigt faslyft..
+b = (1+np.sin(phi))/(1-np.sin(phi))  # .. vilket ger lämpligt b ≈ 4.6
+taud = np.sqrt(b)/wc  # placera max faslyft vid den nya skärfrekvensen
+Flead = (1+taud*s)/(1+taud/b*s)
+mag, phase, omega = ct.frequency_response(F[1]*Flead*G, wc) # ≈ 1.066
+Kp3 = Kp2/mag
+F = [Kp1, Kp2*Flag, Kp3*Flag*Flead]
+print('Flead = ', Flead)
+tidssvar(F)
+Lbode(F)
+Tbode(F)
+
+fig = plt.figure()
+ct.bode_plot(F[2], omega=np.logspace(0, 3))
+fig.suptitle('Bodediagram för den slutliga regulatorn $F(s)$')
+plt.show()
+
+Fc = F[2]
+h = 0.01    # samplingsintervall
+Fd_tustin = ct.sample_system(Fc, h, 'bilinear')
+Fd_forward = ct.sample_system(Fc, h, 'euler')
+Fd_backward = ct.sample_system(Fc, h, 'backward_diff')
+Fd_zoh = ct.sample_system(Fc, h, 'zoh')
+
+fig, axis = plt.subplots(2, 1)
+ct.bode_plot([Fc, Fd_tustin, Fd_forward, Fd_backward, Fd_zoh], initial_phase=0)
+plt.subplot(2, 1, 2)
+plt.legend(['Fc', 'Tustin', 'Euler forward', 'Euler backward', 'Zero order hold'])
+
+plt.show()
